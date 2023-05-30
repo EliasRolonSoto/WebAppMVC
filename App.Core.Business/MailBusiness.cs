@@ -1,4 +1,5 @@
-﻿using App.Core.Entities;
+﻿using App.Core.Data;
+using App.Core.Entities;
 
 namespace App.Core.Business
 {
@@ -11,11 +12,7 @@ namespace App.Core.Business
 
         public List<Mail> Search(string text)
         {
-            var mails = new List<Mail>();
-
-
-
-            return mails;
+            return MailRepository.Search();
         }
     }
 }
