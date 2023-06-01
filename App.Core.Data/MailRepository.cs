@@ -1,26 +1,42 @@
 ﻿using App.Core.Entities;
-using RepoDb;
+using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace App.Core.Data
 {
     public class MailRepository
     {
-        private string _connectionString =
-                "Persist Security Info=True;Initial Catalog=Demo;Data Source=.; Integrated Security=True;TrustServerCertificate=True;";
+       
         public MailRepository()
         {
-            GlobalConfiguration
-              .Setup()
-              .UseSqlServer();
+
         }
 
-        public IEnumerable<Mail> Search(){
+        public BusquedaGenerica<Mail> Search(BusquedaGenerica<Mail> mailBusqueda)
+                             
+        {
 
-            IEnumerable<Mail> mails;
+            var skipRows = ((mailBusqueda.PageIndex - 1) * mailBusqueda.PageSize);
+
+            using (var context = new MailsContext())
+            {
+                var query = from m in context.Mails
+                            where m.Asunto.Contains(mailBusqueda.TextToSearch)
+                            select m;
+
+                var contar = query.Count();
 
 
+                mailBusqueda.Items = query.Skip(skipRows)
+                                           .Take(mailBusqueda.PageSize)
+                                           .ToList();
 
-            return mails;
+                mailBusqueda.Total = contar;
+                
+
+                return mailBusqueda;
+            }
+            
         }
     }
 }
