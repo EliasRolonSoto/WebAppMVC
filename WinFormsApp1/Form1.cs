@@ -39,7 +39,7 @@ namespace WinFormsApp1
                 PageSize = pageSize,
             };
 
-            _ = _mailBusiness.Search(mailBusqueda);
+            _ = _mailBusiness.SearchGeneric(mailBusqueda);
 
             dataGridView1.DataSource = mailBusqueda.Items;
             

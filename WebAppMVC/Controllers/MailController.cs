@@ -34,12 +34,18 @@ namespace WebAppMVC.Controllers
         }
 
 
-        public IActionResult BandejaDeEntrada()
+        public IActionResult InBox()
         {
+            var dato = new BusquedaGenerica<Mail>()
+            {
+                TextToSearch = "SPAM",
+                PageIndex = 1,
+                PageSize = 10,
+            };
 
-            var mails = (new MailBusiness()).Search("demo");
+            var mails = (new MailBusiness()).SearchGeneric(dato);
 
-            return View(mails);
+            return View(mails.Items);
         }
     }
 }

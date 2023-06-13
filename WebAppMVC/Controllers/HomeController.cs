@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using App.Core.Entities;
+using AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebAppMVC.Models;
 
@@ -15,8 +17,13 @@ namespace WebAppMVC.Controllers
 
         public IActionResult Demo()
         {
-            return Content("Simple text plain", "text/html");
+            return View();
         }
+
+        //public IActionResult InBox  ()
+        //{
+        //    return RedirectToAction("Index");
+        //}
 
         public IActionResult Index()
         {

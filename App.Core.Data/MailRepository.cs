@@ -12,8 +12,7 @@ namespace App.Core.Data
 
         }
 
-        public BusquedaGenerica<Mail> Search(BusquedaGenerica<Mail> mailBusqueda)
-                             
+        public RespuestaGenerica<Mail> Search(BusquedaGenerica<Mail> mailBusqueda)
         {
 
             var skipRows = ((mailBusqueda.PageIndex - 1) * mailBusqueda.PageSize);
@@ -26,15 +25,17 @@ namespace App.Core.Data
 
                 var contar = query.Count();
 
+                var respuesta = new RespuestaGenerica<Mail>
+                {
+                    Items = query.Skip(skipRows)
+                                          .Take(mailBusqueda.PageSize)
+                                          .ToList(),
 
-                mailBusqueda.Items = query.Skip(skipRows)
-                                           .Take(mailBusqueda.PageSize)
-                                           .ToList();
+                    Total = contar
+                };
 
-                mailBusqueda.Total = contar;
-                
 
-                return mailBusqueda;
+                return respuesta;
             }
             
         }

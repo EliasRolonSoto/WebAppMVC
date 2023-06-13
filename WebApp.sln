@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Core.Business", "App.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Core.Data", "App.Core.Data\App.Core.Data.csproj", "{A544D3E0-90CE-4272-BA88-9972BD8800B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{3F9F8C59-71A8-465B-B3AB-7BB48420017B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{3F9F8C59-71A8-465B-B3AB-7BB48420017B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppAPI", "WebAppAPI\WebAppAPI.csproj", "{55B61FD0-8DDD-4B82-ABF2-21DBB2BD86FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClientFromConsole", "WebApiClientFromConsole\WebApiClientFromConsole.csproj", "{6F9F15BB-A112-4E65-AF00-DAB6B1B15C59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{3F9F8C59-71A8-465B-B3AB-7BB48420017B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F9F8C59-71A8-465B-B3AB-7BB48420017B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F9F8C59-71A8-465B-B3AB-7BB48420017B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B61FD0-8DDD-4B82-ABF2-21DBB2BD86FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B61FD0-8DDD-4B82-ABF2-21DBB2BD86FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B61FD0-8DDD-4B82-ABF2-21DBB2BD86FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B61FD0-8DDD-4B82-ABF2-21DBB2BD86FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9F15BB-A112-4E65-AF00-DAB6B1B15C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9F15BB-A112-4E65-AF00-DAB6B1B15C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9F15BB-A112-4E65-AF00-DAB6B1B15C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9F15BB-A112-4E65-AF00-DAB6B1B15C59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
